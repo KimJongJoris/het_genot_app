@@ -1,0 +1,12 @@
+= simple_form_for @contact do |f|
+  = f.input :email
+  = f.input :phone
+  = f.input :address
+  = f.button :submit
+
+
+%div
+  - if flash[:alert]
+    %p= flash[:alert]
+  - if flash[:success]
+    %p= flash[:success]
