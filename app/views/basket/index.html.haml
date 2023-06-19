@@ -6,3 +6,5 @@
   %ul
     - @basket_data.each do |object|
       %li= "#{object[:product].name} | Quantity: #{object[:quantity]}"
+
+  = link_to "Place order", basket_place_order_path, class: "button"
