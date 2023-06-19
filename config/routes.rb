@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get "contact/new", to: "contacts#new"
   post "/contacts", to: "contacts#create"
   get "about_us", to: "about_us#index"
+  resources :basket, only: [:index]
 
 
 

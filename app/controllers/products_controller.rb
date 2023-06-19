@@ -24,10 +24,10 @@ class ProductsController < ApplicationController
       end
 
       # Add to basket
-      if session[:basket][@product.id].present?
-        session[:basket][@product.id] += 1
+      if session[:basket][@product.id.to_s].present?
+        session[:basket][@product.id.to_s] += 1
       else
-        session[:basket][@product.id] = 1
+        session[:basket][@product.id.to_s] = 1
       end
 
       # TODO: Make basket visible in application layout
