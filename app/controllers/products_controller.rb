@@ -31,27 +31,31 @@ class ProductsController < ApplicationController
   def add_to_basket
     @product = Product.find(params[:id])
 
-    # Check available
-    # TODO: Maybe just have "Out of stock" instead of "Add to basket" button on front end
-    if @product.available_amount <= 0
-      redirect_to products_path, status: :see_other, notice: "We're out of stock! Check back later."
+    unless user_signed_in?
+      redirect_to products_path, status: :see_other, notice: "You have to be logged in to buy from us."
     else
-      # Get or make basket
-      if session[:basket].nil?
-        session[:basket] = {}
-      end
-
-      # Add to basket
-      if session[:basket][@product.id.to_s].present?
-        session[:basket][@product.id.to_s] += 1
+      # Check available
+      # TODO: Maybe just have "Out of stock" instead of "Add to basket" button on front end
+      if @product.available_amount <= 0
+        redirect_to products_path, status: :see_other, notice: "We're out of stock! Check back later."
       else
-        session[:basket][@product.id.to_s] = 1
-      end
+        # Get or make basket
+        if session[:basket].nil?
+          session[:basket] = {}
+        end
 
-      if @product.update(available_amount: @product.available_amount-1)
-        redirect_to products_path, status: :see_other, success: "Product added to basket!"
-      else
-        redirect_to products_path, status: :see_other, notice: "Failed to add product to basket."
+        # Add to basket
+        if session[:basket][@product.id.to_s].present?
+          session[:basket][@product.id.to_s] += 1
+        else
+          session[:basket][@product.id.to_s] = 1
+        end
+
+        if @product.update(available_amount: @product.available_amount-1)
+          redirect_to products_path, status: :see_other, success: "Product added to basket!"
+        else
+          redirect_to products_path, status: :see_other, notice: "Failed to add product to basket."
+        end
       end
     end
 

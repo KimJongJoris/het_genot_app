@@ -1,0 +1,8 @@
+%h3 Contacts
+
+- @contacts.each do |contact|
+  = "Contacted at: #{contact.contacted_at}"
+  = "E-mail: #{contact.email}"
+  = "Phone: #{contact.phone}"
+  = "Address: #{contact.address}"
+  = "Message: #{contact.message}"

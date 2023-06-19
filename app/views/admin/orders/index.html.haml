@@ -3,5 +3,5 @@
 %ul
 - @orders.each do |order|
   %div
-    = "Order ##{order.id}"
+    = "Order ##{order.id} | Total Price: #{order.total_price}"
     = link_to "View", admin_order_path(order)
