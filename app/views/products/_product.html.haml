@@ -1,3 +1,5 @@
 %div.product
   = product.name
   = product.price
+  = product.available_amount
+  = link_to "Add to basket", add_to_basket_product_path(product)

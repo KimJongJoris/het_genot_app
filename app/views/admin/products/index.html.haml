@@ -1,0 +1,9 @@
+%h1.text-2xl Products
+
+%ul
+- @products.each do |product|
+  %div
+    = product.name
+    = link_to "Edit", edit_admin_product_path(product)
+
+= link_to "Create Product", new_admin_product_path

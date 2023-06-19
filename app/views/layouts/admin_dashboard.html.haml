@@ -1,6 +1,6 @@
 %html
   %head
-    %title HetGenotApp
+    %title [ADMIN] HetGenotApp
     %meta{name:"viewport", content:"width=device-width,initial-scale=1"}
     = csrf_meta_tags
     = csp_meta_tag
@@ -10,17 +10,19 @@
     = javascript_importmap_tags
 
   %body
-    %head
-      - if user_signed_in?
-        %div
-          - basket = session[:basket] || {}
-          = "Basket contains #{basket.length} items"
-          - # TODO: View basket, confirm order through basket (which creates OrdersProducts)
-
     %div
       - if flash[:notice]
         %p= flash[:notice]
       - if flash[:success]
         %p= flash[:success]
+
+    %nav
+      %ul
+        %li= link_to "Manage Products", admin_products_path
+        %li= link_to "Manage Orders", admin_orders_path
+
+    %hr
+    %hr
+    %hr
 
     = yield
