@@ -10,6 +10,24 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def reduce_from_basket
+    @product = Product.find(params[:id])
+
+    return if session[:basket].nil?
+
+    if session[:basket][@product.id.to_s] == 1
+      session[:basket].delete(@product.id.to_s)
+    else
+      session[:basket][@product.id.to_s] -= 1
+    end
+
+    if @product.update(available_amount: @product.available_amount+1)
+      redirect_to basket_index_path, status: :see_other, success: "Product reduced from basket!"
+    else
+      redirect_to basket_index_path, status: :see_other, notice: "Failed to remove product from basket."
+    end
+  end
+
   def add_to_basket
     @product = Product.find(params[:id])
 
@@ -30,7 +48,6 @@ class ProductsController < ApplicationController
         session[:basket][@product.id.to_s] = 1
       end
 
-      # TODO: Make basket visible in application layout
       if @product.update(available_amount: @product.available_amount-1)
         redirect_to products_path, status: :see_other, success: "Product added to basket!"
       else

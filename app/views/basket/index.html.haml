@@ -1,3 +1,4 @@
+
 %h3 My Basket
 
 - if @basket_data.blank?
@@ -5,6 +6,8 @@
 - else
   %ul
     - @basket_data.each do |object|
-      %li= "#{object[:product].name} | Quantity: #{object[:quantity]}"
+      %li
+        %div.left= "#{object[:product].name} | Quantity: #{object[:quantity]}"
+        %div.right= link_to "-1", reduce_from_basket_product_path(id: object[:product].id)
 
   = link_to "Place order", basket_place_order_path, class: "button"

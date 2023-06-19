@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :show] do
     member do
       get :add_to_basket
+      get :reduce_from_basket
     end
   end
 
