@@ -1,5 +1,7 @@
-Products:
-
-- @products.each do |product|
-  = render "product", product: product
+%div.webshop
+  %div.products
+    %h2 Products
+    %div.product-list
+      - @products.each do |product|
+        = render "product", product: product
 

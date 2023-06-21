@@ -1,5 +1,6 @@
 %div.product
-  = product.name
-  = product.price
-  = product.available_amount
-  = link_to "Add to basket", add_to_basket_product_path(product)
+  = image_tag "https://placekitten.com/150/150"
+  %div.name= product.name
+  %div.price= "€#{product.price}"
+  %div.available-amount= "#{product.available_amount} in stock"
+  = link_to "Add to basket", add_to_basket_product_path(product), class: 'button-link'

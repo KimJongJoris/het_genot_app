@@ -1,17 +1,4 @@
-nav {
-    display: flex;
-    flex-flow: row;
-    width: 100%;
-    border-bottom: 2px solid black;
-}
-nav div {
-    padding: 0.5em;
-    border-right: 1px solid black;
-}
 
-main {
-    margin-top: 1em;
-}
 
 /* Products */
 .products {

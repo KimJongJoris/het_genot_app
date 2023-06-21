@@ -1,17 +1,13 @@
-%h3 Contact Us
+%div.contact
 
-%p Contact us if you want beer for free.
+  %h2 Contact Us
 
-= simple_form_for @contact do |f|
-  = f.input :email
-  = f.input :phone
-  = f.input :address
-  = f.input :message
-  = f.button :submit
+  %p Contact us if you want beer for free.
 
-
-%div
-  - if flash[:alert]
-    %p= flash[:alert]
-  - if flash[:success]
-    %p= flash[:success]
+  %div.contact-form
+    = simple_form_for @contact do |f|
+      = f.input :email
+      = f.input :phone
+      = f.input :address
+      = f.input :message
+      = f.button :submit
