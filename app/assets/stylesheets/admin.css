@@ -45,6 +45,22 @@ main {
 .products .button-link {
     width: fit-content;
 }
+.product form {
+    background-color: lightgrey;
+    width: 400px;
+}
+.product form .input {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    padding: 0.1em;
+}
+.product form .input:nth-child(odd) {
+    background-color: beige;
+}
+.product form .input label {
+    font-weight: 600;
+}
 
 /* Orders */
 .orders {

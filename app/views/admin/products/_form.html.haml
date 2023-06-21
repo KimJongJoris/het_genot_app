@@ -1,7 +1,8 @@
-= simple_form_for [:admin, @product] do |f|
-  = f.input :name
-  = f.input :price
-  = f.input :available_amount
-  = f.button :submit
+%div.product
+  = simple_form_for [:admin, @product] do |f|
+    = f.input :name
+    = f.input :price
+    = f.input :available_amount
+    = f.button :submit
 
-= link_to "Back", :back
+  = link_to "Back", :back
