@@ -1,13 +1,19 @@
-- @orders_products.each do |order_product|
- %div.order_product
-  =order_product.product.name
+%h2.title About Us
 
+%p
+ = "Here are Het Genot, we believe in one thing about all others:"
+ %span{style: 'font-style: italic'} Het Genot
+ = "."
 
+%p
+ = "That's why we've sold over #{@count} products since we opened."
 
-%div
- Hello there
- %p.mt-4
-  What's up
+%p
+ = "That's right. That's #{@count} products that have made it from our brewery into the keelpijpen of a lot of fucking junkies."
 
-%div.goodbye
- Goodbye
+%h2.title Our Most Popular Product
+
+%p
+ = "Come on, now. If there's one thing that people love, it's #{@most_popular_product.name}."
+%p
+ = "Join the herd. Buy our products now."

@@ -1,8 +1,25 @@
-%h3 Contacts
+%div.contacts
 
-- @contacts.each do |contact|
-  = "Contacted at: #{contact.contacted_at}"
-  = "E-mail: #{contact.email}"
-  = "Phone: #{contact.phone}"
-  = "Address: #{contact.address}"
-  = "Message: #{contact.message}"
+  %h1.text-2xl Contacts
+  %hr
+
+  %div.contact-list
+    %div.contact
+      %div.contacted-at
+        %strong Contacted at
+      %div.email
+        %strong Email
+      %div.phone
+        %strong Phone
+      %div.address
+        %strong Address
+      %div.message
+        %strong Message
+    - @contacts.each do |contact|
+      %div.contact
+        %div.contacted-at= "#{contact.contacted_at}"
+        %div.email
+          = link_to "#{contact.email}", "mailto:#{contact.email}"
+        %div.phone= "#{contact.phone}"
+        %div.address= "#{contact.address}"
+        %div.message= "#{contact.message}"

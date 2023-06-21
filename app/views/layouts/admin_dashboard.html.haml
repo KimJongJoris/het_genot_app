@@ -16,6 +16,7 @@
         %p= flash[:success]
 
     %nav
+      %div= link_to "Manage Contacts", admin_contacts_path
       %div= link_to "Manage Products", admin_products_path
       %div= link_to "Manage Orders", admin_orders_path
       %div= link_to "Main Site", root_path

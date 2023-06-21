@@ -118,3 +118,31 @@ body.admin-dashboard .order .product-list .product {
     padding-bottom: 0.5em;
     border-bottom: 1px solid black;
 }
+
+/* Contacts */
+body.admin-dashboard .contacts {
+    background-color: lightgrey;
+    width: 100%;
+}
+body.admin-dashboard .contacts .contact-list {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+body.admin-dashboard .contacts .contact-list .contact {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: grey;
+}
+body.admin-dashboard .contacts .contact-list .contact:nth-child(odd) {
+    background-color: beige;
+}
+body.admin-dashboard .contacts .contact-list .contact div {
+    flex: 1 1;
+}
+body.admin-dashboard .contacts .contact-list .contact div.message {
+    flex: 6 6;
+}

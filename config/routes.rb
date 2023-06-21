@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # Admin area
   namespace :admin do
     root to: "dashboard#index"
+    resources :contacts, only: :index
     resources :products, except: :show
     resources :orders, only: [:index, :show]
   end
