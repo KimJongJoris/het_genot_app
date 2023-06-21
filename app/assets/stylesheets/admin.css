@@ -1,7 +1,3 @@
-html {
-    font-size: 16px;
-}
-
 nav {
     display: flex;
     flex-flow: row;
@@ -35,6 +31,7 @@ main {
     align-items: center;
     width: 100%;
     background-color: grey;
+    padding: 0.1em;
 }
 .products .product-list .product .name {
     padding: 0.2em;
@@ -49,7 +46,7 @@ main {
     width: fit-content;
 }
 
-/* Order */
+/* Orders */
 .orders {
     background-color: lightgrey;
     width: 400px;
@@ -67,6 +64,7 @@ main {
     align-items: center;
     width: 100%;
     background-color: grey;
+    padding: 0.1em;
 }
 .orders .order-list .order .name,
 .orders .order-list .order .total-price,
@@ -78,4 +76,44 @@ main {
 }
 .orders .button-link {
     width: fit-content;
+}
+
+/* Orders - Show */
+.order {
+    display: flex;
+    flex-flow: column;
+    width: 400px;
+    background-color: lightgrey;
+    padding: 1em;
+}
+.order .list-item {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;;
+    width: 100%;
+    background-color: grey;
+    padding: 0.1em;
+}
+.order .list-item:nth-child(odd) {
+    background-color: beige;
+}
+.order .list-item .left {
+    font-weight: 600;
+}
+
+.order .products {
+    display: flex;
+    background-color: lightgrey;
+    width: 400px;
+    padding: 1em;
+}
+.order .product-list {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+.order .product-list .product {
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid black;
 }

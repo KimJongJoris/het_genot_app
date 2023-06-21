@@ -1,5 +1,12 @@
+* {
+    font-family: 'Segoe UI', sans-serif;
+}
 html {
     font-size: 16px;
+}
+a {
+    text-decoration: none;
+    color: black;
 }
 
 a.button-link {

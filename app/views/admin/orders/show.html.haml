@@ -1,24 +1,26 @@
-%h1.text-2xl= "Order ##{order.id}"
+%div.order
+  %h1.text-2xl= "Order ##{@order.id}"
 
-%div
-  .left= "User:"
-  .right= "#{user.name} (#{user.id})"
-%div
-  .left= "Order date:"
-  .right= order.order_date.to_s
-%div
-  .left= "Total price:"
-  .right= order.total_price
-%div
-  = "Products:"
-  - order.orders_products.each do |order_product|
-    %div.product
-      %div
-        .left= "Name"
-        .right= order_product.product.name
-      %div
-        .left= "Price"
-        .right= order_product.product.price
-      %div
-        .left= "Quantity"
-        .right= order_product.quantity
+  %div.list-item
+    %div.left= "User:"
+    %div.right= "#{@order.user.name} (#{@order.user.id})"
+  %div.list-item
+    %div.left= "Order date:"
+    %div.right= @order.order_date.to_s
+  %div.list-item
+    %div.left= "Total price:"
+    %div.right= @order.total_price
+  %h2 Products
+  git
+  %div.product-list
+    - @order.orders_products.each do |order_product|
+      %div.product
+        %div.list-item
+          %div.left= "Name"
+          %div.right= order_product.product.name
+        %div.list-item
+          %div.left= "Price"
+          %div.right= order_product.product.price
+        %div.list-item
+          %div.left= "Quantity"
+          %div.right= order_product.quantity
