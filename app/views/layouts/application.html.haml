@@ -25,7 +25,6 @@
         %div.basket.right
           - basket = session[:basket] || {}
           = link_to "View Basket", basket_index_path
-          %br
           = "#{pluralize(basket.length, "item", "items")}"
 
     %div
@@ -34,4 +33,9 @@
       - if flash[:success]
         %p= flash[:success]
 
-    = yield
+    %main
+      = yield
+
+  %footer
+    %div.center
+      = "Copyright Joris Sperling @ FHICT (C) #{DateTime.current.year.to_s}"

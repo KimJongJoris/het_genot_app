@@ -1,13 +1,14 @@
+%h2 My Basket
 
-%h3 My Basket
+%div.page
 
-- if @basket_data.blank?
-  %p No shit in the basket.
-- else
-  %ul
-    - @basket_data.each do |object|
-      %li
-        %div.left= "#{object[:product].name} | Quantity: #{object[:quantity]}"
-        %div.right= link_to "-1", reduce_from_basket_product_path(id: object[:product].id)
+  - if @basket_data.blank?
+    %p No shit in the basket.
+  - else
+    %ul
+      - @basket_data.each do |object|
+        %li
+          %div.left= "#{object[:product].name} | Quantity: #{object[:quantity]}"
+          %div.right= link_to "-1", reduce_from_basket_product_path(id: object[:product].id)
 
-  = link_to "Place order", basket_place_order_path, class: "button"
+    = link_to "Place order", basket_place_order_path, class: "button"

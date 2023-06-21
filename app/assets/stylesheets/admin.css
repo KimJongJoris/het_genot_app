@@ -1,17 +1,17 @@
 
 
 /* Products */
-.products {
+body.admin-dashboard .products {
     background-color: lightgrey;
     width: 400px;
     padding: 1em;
 }
-.products .product-list {
+body.admin-dashboard .products .product-list {
     display: flex;
     flex-flow: column;
     width: 100%;
 }
-.products .product-list .product {
+body.admin-dashboard .products .product-list .product {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
@@ -20,47 +20,47 @@
     background-color: grey;
     padding: 0.1em;
 }
-.products .product-list .product .name {
+body.admin-dashboard .products .product-list .product .name {
     padding: 0.2em;
 }
-.products .product-list .product .edit {
+body.admin-dashboard .products .product-list .product .edit {
     padding: 0.2em;
 }
-.products .product-list .product:nth-child(odd) {
+body.admin-dashboard .products .product-list .product:nth-child(odd) {
     background-color: beige;
 }
-.products .button-link {
+body.admin-dashboard .products .button-link {
     width: fit-content;
 }
-.product form {
+body.admin-dashboard .product form {
     background-color: lightgrey;
     width: 400px;
 }
-.product form .input {
+body.admin-dashboard .product form .input {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
     padding: 0.1em;
 }
-.product form .input:nth-child(odd) {
+body.admin-dashboard .product form .input:nth-child(odd) {
     background-color: beige;
 }
-.product form .input label {
+body.admin-dashboard .product form .input label {
     font-weight: 600;
 }
 
 /* Orders */
-.orders {
+body.admin-dashboard .orders {
     background-color: lightgrey;
     width: 400px;
     padding: 1em;
 }
-.orders .order-list {
+body.admin-dashboard .orders .order-list {
     display: flex;
     flex-flow: column;
     width: 100%;
 }
-.orders .order-list .order {
+body.admin-dashboard .orders .order-list .order {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
@@ -69,27 +69,27 @@
     background-color: grey;
     padding: 0.1em;
 }
-.orders .order-list .order .name,
-.orders .order-list .order .total-price,
-.orders .order-list .order .view {
+body.admin-dashboard .orders .order-list .order .name,
+body.admin-dashboard .orders .order-list .order .total-price,
+body.admin-dashboard .orders .order-list .order .view {
     padding: 0.2em;
 }
-.orders .order-list .order:nth-child(odd) {
+body.admin-dashboard .orders .order-list .order:nth-child(odd) {
     background-color: beige;
 }
-.orders .button-link {
+body.admin-dashboard .orders .button-link {
     width: fit-content;
 }
 
 /* Orders - Show */
-.order {
+body.admin-dashboard .order {
     display: flex;
     flex-flow: column;
     width: 400px;
     background-color: lightgrey;
     padding: 1em;
 }
-.order .list-item {
+body.admin-dashboard .order .list-item {
     display: flex;
     flex-flow: row;
     justify-content: space-between;;
@@ -97,25 +97,25 @@
     background-color: grey;
     padding: 0.1em;
 }
-.order .list-item:nth-child(odd) {
+body.admin-dashboard .order .list-item:nth-child(odd) {
     background-color: beige;
 }
-.order .list-item .left {
+body.admin-dashboard .order .list-item .left {
     font-weight: 600;
 }
 
-.order .products {
+body.admin-dashboard .order .products {
     display: flex;
     background-color: lightgrey;
     width: 400px;
     padding: 1em;
 }
-.order .product-list {
+body.admin-dashboard .order .product-list {
     display: flex;
     flex-flow: column;
     width: 100%;
 }
-.order .product-list .product {
+body.admin-dashboard .order .product-list .product {
     margin-bottom: 0.5em;
     padding-bottom: 0.5em;
     border-bottom: 1px solid black;

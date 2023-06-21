@@ -1,6 +1,7 @@
-%div.webshop
+%h2 Products
+
+%div.page
   %div.products
-    %h2 Products
     %div.product-list
       - @products.each do |product|
         = render "product", product: product

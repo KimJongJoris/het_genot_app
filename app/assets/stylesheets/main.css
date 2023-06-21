@@ -4,34 +4,77 @@
     font-family: 'Segoe UI', sans-serif;
 }
 html {
+    display: flex;
+    justify-content: center;
     font-size: 16px;
+    background-color: #a5a5a5;
 }
+
+body {
+    display: flex;
+    flex-flow: column;
+
+    margin: 0;
+    width: 1200px;
+    height: fit-content;
+    background-color: white;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+}
+body nav {
+    display: flex;
+    flex-flow: row;
+    border-bottom: 2px solid black;
+
+    width: 100%;
+}
+body nav div {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0.5em;
+    border-right: 1px solid black;
+}
+body nav div.basket {
+    border-left: 1px solid black;
+    margin-left: auto;
+}
+body main {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    flex: 8 8;
+    width: 100%;
+}
+body main div.page {
+    padding: 1em;
+}
+body footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    border-top: 2px solid black;
+    padding: 0.5em;
+}
+
 a {
     text-decoration: none;
     color: black;
 }
-nav {
-    display: flex;
-    flex-flow: row;
-    border-bottom: 2px solid black;
-}
-nav div {
-    padding: 0.5em;
-    border-right: 1px solid black;
-}
-main {
-    margin-top: 1em;
-}
-
 a.button-link, form .btn {
     padding: 0.3em;
     border: 1px solid black;
     background-color: #ffcc00;
 }
 
-nav div.basket {
-    border-left: 1px solid black;
-    margin-left: auto;
+h2 {
+    background-color: grey;
+    padding: 0.5em;
+    margin: 0;
+    font-weight: normal;
 }
 
 /* Contact */
@@ -53,34 +96,28 @@ nav div.basket {
 }
 
 /* Webshop */
-.webshop .products {
+div.page .products {
     background-color: lightgrey;
-    width: 600px;
-    padding: 1em;
+    width: 100%;
+    padding: 0;
 }
-.webshop .products .product-list {
+div.page .products .product-list {
     display: flex;
     flex-flow: column;
     width: 100%;
 }
-.webshop .products .product-list .product {
+div.page .products .product-list .product {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     background-color: grey;
-    padding: 0.3em;
+    padding: 0.3em 0;
 }
-.webshop .products .product-list .product .name {
-    padding: 0.2em;
-}
-.webshop .products .product-list .product .edit {
-    padding: 0.2em;
-}
-.webshop .products .product-list .product:nth-child(odd) {
+div.page .products .product-list .product:nth-child(odd) {
     background-color: beige;
 }
-.webshop .products .button-link {
+div.page .products .button-link {
     width: fit-content;
 }
