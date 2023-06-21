@@ -1,20 +1,20 @@
 %div.contacts
 
-  %h1.text-2xl Contacts
+  %h1.text-2xl Contacten
   %hr
 
   %div.contact-list
     %div.contact
       %div.contacted-at
-        %strong Contacted at
+        %strong Gecontacteerd op
       %div.email
         %strong Email
       %div.phone
-        %strong Phone
+        %strong Telefoon
       %div.address
         %strong Address
       %div.message
-        %strong Message
+        %strong Bericht
     - @contacts.each do |contact|
       %div.contact
         %div.contacted-at= "#{contact.contacted_at}"

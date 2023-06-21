@@ -1,14 +1,14 @@
 %div.orders
-  %h1.text-2xl Orders
+  %h1.text-2xl Bestellingen
 
   %div.order-list
     %div.order
       %div.name
-        %strong Order #
+        %strong Bestelling #
       %div.total-price
-        %strong Total Price
+        %strong Totaalprijs
       %div.view
-        %strong View
+        %strong Bekijk
     - @orders.each do |order|
       %div.order
         %div.name= "##{order.id}"
