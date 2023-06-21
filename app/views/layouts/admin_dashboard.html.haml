@@ -6,23 +6,18 @@
     = csp_meta_tag
 
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
-    = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
     = javascript_importmap_tags
 
-  %body
-    %div
+  %body.admin-dashboard
+    %div.flashes
       - if flash[:notice]
         %p= flash[:notice]
       - if flash[:success]
         %p= flash[:success]
 
     %nav
-      %ul
-        %li= link_to "Manage Products", admin_products_path
-        %li= link_to "Manage Orders", admin_orders_path
+      %div= link_to "Manage Products", admin_products_path
+      %div= link_to "Manage Orders", admin_orders_path
 
-    %hr
-    %hr
-    %hr
-
-    = yield
+    %main
+      = yield

@@ -1,7 +1,16 @@
-%h1.text-2xl Orders
+%div.orders
+  %h1.text-2xl Orders
 
-%ul
-- @orders.each do |order|
-  %div
-    = "Order ##{order.id} | Total Price: #{order.total_price}"
-    = link_to "View", admin_order_path(order)
+  %div.order-list
+    %div.order
+      %div.name
+        %strong Order #
+      %div.total-price
+        %strong Total Price
+      %div.view
+        %strong View
+    - @orders.each do |order|
+      %div.order
+        %div.name= "##{order.id}"
+        %div.total-price= "€#{order.total_price}"
+        = link_to "View", admin_order_path(order), class: "button-link view"

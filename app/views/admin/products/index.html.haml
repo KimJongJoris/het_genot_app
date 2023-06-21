@@ -1,9 +1,14 @@
-%h1.text-2xl Products
+%div.products
+  %h1.text-2xl Products
+  %hr
 
-%ul
-- @products.each do |product|
-  %div
-    = product.name
-    = link_to "Edit", edit_admin_product_path(product)
+  %div.product-list
+    %div.product
+      %div.name
+        %strong Product Name
+    - @products.each do |product|
+      %div.product
+        %div.name= product.name
+        = link_to "Edit", edit_admin_product_path(product), class: "button-link edit"
 
-= link_to "Create Product", new_admin_product_path
+    = link_to "Create Product", new_admin_product_path, class: "button-link"
