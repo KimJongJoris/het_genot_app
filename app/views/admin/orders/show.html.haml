@@ -10,7 +10,8 @@
   %div.list-item
     %div.left= "Total price:"
     %div.right= @order.total_price
-  %h2 Products
+
+  %h2.geen-stijl Products
 
   %div.product-list
     - @order.orders_products.each do |order_product|

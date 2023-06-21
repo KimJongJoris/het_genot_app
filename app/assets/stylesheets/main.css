@@ -70,7 +70,7 @@ a.button-link, form .btn {
     background-color: #ffcc00;
 }
 
-h2 {
+h2.title {
     background-color: grey;
     padding: 0.5em;
     margin: 0;
@@ -119,5 +119,33 @@ div.page .products .product-list .product:nth-child(odd) {
     background-color: beige;
 }
 div.page .products .button-link {
+    width: fit-content;
+}
+
+/* Basket */
+div.page .basket-list {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+div.page .basket-list .item {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: grey;
+    padding: 0.1em;
+}
+div.page .basket-list .item .name {
+    padding: 0.2em;
+}
+div.page .basket-list .item .remove {
+    padding: 0.2em;
+}
+div.page .basket-list .item:nth-child(odd) {
+    background-color: beige;
+}
+div.page .button-link {
     width: fit-content;
 }

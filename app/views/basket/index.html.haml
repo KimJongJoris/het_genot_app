@@ -1,14 +1,27 @@
-%h2 My Basket
+%h2.title My Basket
 
 %div.page
-
   - if @basket_data.blank?
-    %p No shit in the basket.
+    %p There is nothing in your basket.
   - else
-    %ul
+    %div.basket-list
+      %div.item
+        %div.name
+          %strong Name
+        %div.quantity
+          %strong Quantity
+        %div.price
+          %strong Price
+        %div.actions
+          %strong Actions
       - @basket_data.each do |object|
-        %li
-          %div.left= "#{object[:product].name} | Quantity: #{object[:quantity]}"
-          %div.right= link_to "-1", reduce_from_basket_product_path(id: object[:product].id)
+        %div.item
+          %div.name= "#{object[:product].name}"
+          %div.quantity= "#{object[:quantity]}"
+          %div.price= "#{number_to_currency(object[:product].price * object[:quantity], unit: "€")}"
+          %div.actions
+            = link_to "Remove", reduce_from_basket_product_path(id: object[:product].id), class: 'button-link remove'
 
-    = link_to "Place order", basket_place_order_path, class: "button"
+      %div.bottom
+        %p= "Total Price: #{number_to_currency(@total_price, unit: "€")}"
+        = link_to "Place order", basket_place_order_path, class: "button-link"

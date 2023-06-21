@@ -1,6 +1,6 @@
 %div.product
   = image_tag "https://placekitten.com/150/150"
   %div.name= product.name
-  %div.price= "€#{product.price}"
+  %div.price= "#{number_to_currency(product.price, unit: "€")}"
   %div.available-amount= "#{product.available_amount} in stock"
   = link_to "Add to basket", add_to_basket_product_path(product), class: 'button-link'
